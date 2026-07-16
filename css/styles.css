@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #3d405b;
 }
 
@@ -22,7 +22,7 @@ body{
 .form-input h4 {
     font-size: 20px;
     text-align: center;
-    margin: 0 0 20px ;
+    margin: 0 0 20px;
 }
 
 .controls {
@@ -37,11 +37,12 @@ body{
     color: #f4f1de;
 }
 
-.button:hover {
+.button:hover,
+.button-reset:hover {
     text-decoration: underline;
 }
 
-.form-input .button{
+.form-input .button {
     width: 100%;
     background: #585a5d;
     border: none;
@@ -49,4 +50,12 @@ body{
     color: #f4f1de;
     margin: 16px 0;
     font-size: 16px;
+}
+
+.form-input .button-reset {
+    width: 100%;
+    background: #e07a5f;
+    border: none;
+    color: #f4f1de;
+    font-size: 12px;
 }

@@ -5,29 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <title>Formulario</title>
+    <title>Formulario de entrada de datos</title>
 </head>
 
 <body>
-    <form class="form-input">
-        <h4>Formulario de entrada de datos</h4>
-        <input class="controls" required="yes" type="text" name="cliente" id="cliente" placeholder="Nombre de cliente" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü'\s\-]+" title="¡No se permiten caracteres numéricos ni especiales en este campo!">
-        <input class="controls" required="yes" type="text" name="articulo" id="articulo" placeholder="Articulo">
-        <input class="controls" required="yes" type="text" name="fecha-pedido" id="fech-pedido"
-            placeholder="Fecha de pedido" onfocus="(this.type='date')" onblur="(this.type='text')">
-        <input class="controls" required="yes" type="text" name="fecha-entrega" id="fecha-entrega"
-            placeholder="Fecha de entrega" onfocus="(this.type='date')" onblur="(this.type='text')">
-        <input class="controls" required="yes" type="text" name="ciudad" id="ciudad" placeholder="Ciudad" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü'\s\-]+" title="¡No se permiten caracteres numéricos ni especiales en este campo!">
-        <input class="controls" required="yes" type="text" name="pais" id="pais" placeholder="País" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü'\s\-]+" title="¡No se permiten caracteres numéricos ni especiales en este campo!">
-        <input class="controls" required="yes" type="number" name="cantidad" id="cantidad" placeholder="Cantidad"
-            min="1" step="1">
-        <input class="controls" type="number" name="descuento" id="descuento" placeholder="Descuento (%)" min="0" step="0.01">
-        <input class="controls" type="number" name="iva" id="iva" placeholder="IVA" min="0" step="1">
-        <input class="controls" required="yes" type="number" name="precio" id="precio" placeholder="Precio unitario"
-            min="0.01" step="0.01">
-        <input class="button" type="submit" value="Enviar">
-        <input class="button-reset" type="reset" value="Borrar los datos">
-    </form>
+
+    <main>
+
+        <h1>Formulario de entrada de datos</h1>
+
+        <form class="form-input" action="./pages/orders" method="post" autocomplete="on">
+
+            <fieldset>
+
+                <legend>Datos del pedido</legend>
+                <label for="cliente">Nombre del cliente</label>
+                <input class="controls" required type="text" minlength="2" maxlength="60" autocomplete="name"
+                    name="cliente" id="cliente" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
+                    title="¡No se permiten caracteres numéricos ni especiales en este campo!">
+                <label for="articulo">Artículo</label>
+                <input class="controls" required type="text" maxlength="150" name="articulo" id="articulo">
+                <label for="fecha-pedido">Fecha del pedido</label>
+                <input class="controls" required type="date" name="fecha-pedido" id="fecha-pedido">
+                <label for="fecha-entrega">Fecha de entrega</label>
+                <input class="controls" required type="date" name="fecha-entrega" id="fecha-entrega">
+                <label for="ciudad">Ciudad</label>
+                <input class="controls" required type="text" maxlength="100" autocomplete="address-level2" name="ciudad"
+                    id="ciudad" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
+                    title="¡No se permiten caracteres numéricos ni especiales en este campo!">
+                <label for="pais">País</label>
+                <input class="controls" required type="text" maxlength="100" autocomplete="country" name="pais"
+                    id="pais" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
+                    title="¡No se permiten caracteres numéricos ni especiales en este campo!">
+                <label for="cantidad">Cantidad</label>
+                <input class="controls" required type="number" name="cantidad" id="cantidad" min="1" step="1">
+                <label for="descuento">Descuento (%) (opcional)</label>
+                <input class="controls" type="number" name="descuento" id="descuento" min="0" max="100" step="1">
+                <label for="iva">IVA</label>
+                <input class="controls" required type="number" name="iva" id="iva" min="0" max="100" step="1">
+                <label for="precio">Precio unitario (€)</label>
+                <input class="controls" required type="number" inputmode="numeric" name="precio" id="precio" min="0.01"
+                    step="0.01">
+                <button class="button" type="submit">Enviar</button>
+                <button class="button-reset" type="reset">Borrar los datos</button>
+
+            </fieldset>
+
+        </form>
+
+    </main>
+
 </body>
 
 </html>

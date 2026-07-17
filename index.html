@@ -2,8 +2,11 @@
 <html lang="es">
 
 <head>
+    <!-- Document metadata and configuration -->
     <meta charset="UTF-8">
+    <!-- Responsive layout settings -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="./css/styles.css">
     <title>Formulario de entrada de datos</title>
 </head>
@@ -12,40 +15,65 @@
 
     <main>
 
+        <!-- Page heading -->
         <h1>Formulario de entrada de datos</h1>
 
+        <!-- Order data submission form -->
         <form class="form-input" action="./pages/orders" method="post" autocomplete="on">
 
             <fieldset>
 
+                <!-- Order information -->
                 <legend>Datos del pedido</legend>
+
+                <!-- Customer name -->
                 <label for="cliente">Nombre del cliente</label>
                 <input class="controls" required type="text" minlength="2" maxlength="60" autocomplete="name"
                     name="cliente" id="cliente" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
                     title="¡No se permiten caracteres numéricos ni especiales en este campo!">
+
+                <!-- Product name -->
                 <label for="articulo">Artículo</label>
                 <input class="controls" required type="text" maxlength="150" name="articulo" id="articulo">
+
+                <!-- Order date -->
                 <label for="fecha-pedido">Fecha del pedido</label>
                 <input class="controls" required type="date" name="fecha-pedido" id="fecha-pedido">
+
+                <!-- Delivery date -->
                 <label for="fecha-entrega">Fecha de entrega</label>
                 <input class="controls" required type="date" name="fecha-entrega" id="fecha-entrega">
+
+                <!-- Customer city -->
                 <label for="ciudad">Ciudad</label>
                 <input class="controls" required type="text" maxlength="100" autocomplete="address-level2" name="ciudad"
                     id="ciudad" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
                     title="¡No se permiten caracteres numéricos ni especiales en este campo!">
+
+                <!-- Customer country -->
                 <label for="pais">País</label>
                 <input class="controls" required type="text" maxlength="100" autocomplete="country" name="pais"
                     id="pais" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü' \-]+"
                     title="¡No se permiten caracteres numéricos ni especiales en este campo!">
+
+                <!-- Quantity -->
                 <label for="cantidad">Cantidad</label>
                 <input class="controls" required type="number" name="cantidad" id="cantidad" min="1" step="1">
+
+                <!-- Optional discount -->
                 <label for="descuento">Descuento (%) (opcional)</label>
                 <input class="controls" type="number" name="descuento" id="descuento" min="0" max="100" step="1">
+
+                <!-- VAT percentage -->
                 <label for="iva">IVA</label>
                 <input class="controls" required type="number" name="iva" id="iva" min="0" max="100" step="1">
+
+                <!-- Unit price -->
                 <label for="precio">Precio unitario (€)</label>
                 <input class="controls" required type="number" inputmode="numeric" name="precio" id="precio" min="0.01"
                     step="0.01">
+
+                <!-- Form actions -->
                 <button class="button" type="submit">Enviar</button>
                 <button class="button-reset" type="reset">Borrar los datos</button>
 
